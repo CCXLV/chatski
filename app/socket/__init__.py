@@ -1,0 +1,1 @@
+from app.socket.functions import register_event_handlers

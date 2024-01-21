@@ -1,0 +1,109 @@
+.nav-bar {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    /* background-color: #0d6efd; */
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: rgb(21, 20, 20);
+    /* font-weight: bold; */
+    padding: 4px;
+    border-bottom: 2px solid aliceblue;
+}
+.nav-inner {
+    display: flex;
+    padding: 2px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.nav-side {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.nav-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 91px;
+    padding: 2px;
+    background-color: var(--secondary-color);
+    color: aliceblue;
+    border-radius: 2px;
+}
+.nav-profile-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 60px;
+    border-radius: 2px;
+    transition: background-color 0.1s ease-in-out;
+}
+.nav-profile-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 31px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.nav-profile-right:hover {
+    background-color: var(--secondary-hover);
+    transition: background-color 0.1s ease-in-out;
+}
+.dropdown-menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+}
+.dropdown-icon {    
+    color: aliceblue;
+    transform: rotate(180deg);
+    transition: transform 0.1s ease-in-out
+}
+.profile-info {
+    position: absolute;
+    width: 91px;
+    height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 5px;
+    transition: height 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;;
+    top: 40px;
+    background-color: var(--secondary-color);
+    color: aliceblue;
+    transform-origin: top;
+    transform: scaleY(0);
+    z-index: 1;
+}
+.profile-info.active {
+    height: auto;
+    opacity: 1;
+    transform: scaleY(1);
+}
+.profile-info-row {
+    margin-bottom: 5px;
+}
+p {
+    margin: 0;
+}
+span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.profile-info-header {
+    font-weight: bold;
+}
