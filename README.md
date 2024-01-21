@@ -1,6 +1,6 @@
 # Chat website with flask restful api in the backend and react in the frontend
 
-using sqlite3 for storing friends and redis for storing messages
+using sqlite3 for storing friends and redis for storing messages, you can also see whether your friend is online or not
 
 ![Preview](./preview.png)
 
