@@ -6,6 +6,8 @@ using sqlite3 for storing friends and redis for storing messages
 
 ```cmd
 pip install -r requirements.txt
+flask init_db
+flask populate_db
 ```
 
 ```cmd
