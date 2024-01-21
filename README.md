@@ -1,3 +1,7 @@
+Chat website with flask restful api in the backend and react in the frontend
+
+using sqlite3 for storing friends and redis for storing messages
+
 ```cmd
 pip install -r requirements.txt
 ```
