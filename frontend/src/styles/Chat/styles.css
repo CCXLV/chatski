@@ -45,6 +45,7 @@
     height: calc(100% - 45px);
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: hidden;
     gap: 10px;
     /* justify-content: space-between; */
 }
@@ -59,9 +60,9 @@
     background-color: var(--secondary-color);
     max-width: 50%;
     padding: 6px;
-    width: fit-content;
-    display: inline-block;
-    word-wrap: break-word;
+    /* width: fit-content; */
+    /* display: inline-block; */
+    /* word-wrap: break-word; */
     display: flex;
     flex-direction: row;
 }
@@ -100,6 +101,9 @@
 }
 .message-inner-div {
     display: flex;
+    width: 100%;
+    display: inline-block;
+    word-wrap: break-word;
 }
 .message-info {
     height: 30px;
@@ -118,6 +122,10 @@
 .message-date-sp {
     display: flex;
     font-size: 14px;
+}
+.message-body {
+    display: flex;
+    height: 100%;
 }
 .message-delete-button {
     position: fixed;

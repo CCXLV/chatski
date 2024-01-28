@@ -37,6 +37,7 @@ export interface userAccessType {
     access_token?: string;
     user_id?: string;
     username?: string;
+    refresh_token?: string;
 };
 
 export interface ChatInfoType {

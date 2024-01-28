@@ -58,7 +58,6 @@ const Chat: React.FC<ChatType> = ({
             getChatMessages(userAccess?.access_token || '', chatFriendId)
             .then((res: any) => {
                 setchatMessages(res.data);
-                console.log(res.data)
             })
         }
 
@@ -83,8 +82,7 @@ const Chat: React.FC<ChatType> = ({
             return dateA - dateB;
         })
         : [];
-    
-    console.log(userAccess?.username)
+
 
     return (
         <div className="chat-main column">

@@ -21,12 +21,23 @@ const FriendsList: React.FC<FriendsProps> = ({userPresence, userAccess}) => {
 
     useEffect(function() {
         if(userAccess?.access_token) {
-            const friendsList = getFriendsList(userAccess.access_token);
-            friendsList.then((res: any) => {
-                setUserFriends(res.data);
+            const friendsList = getFriendsList(userAccess.access_token, userAccess.refresh_token || '');
+            friendsList.then((response: any) => {
+                if (response.access_token) {
+                    userAccess.access_token = response.access_token
+                    const updatedUserFriends = getFriendsList(userAccess.access_token || '', userAccess.refresh_token || '');
+                    updatedUserFriends.then((res) => {
+                        setUserFriends(res);
+                    })
+                } else {
+                    const updatedUserFriends = getFriendsList(userAccess.access_token || '', userAccess.refresh_token || '');
+                    updatedUserFriends.then((res) => {
+                        setUserFriends(res);
+                    })
+                }
             })
         }
-    }, [])
+    }, [userAccess])
 
     const sortedFriends = userFriends
         ? [...userFriends].sort((a, b) =>

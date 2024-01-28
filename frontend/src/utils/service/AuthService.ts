@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { userAccessType } from "../types/types";
+
 const API_URL = "http://127.0.0.1:5000/api";
 
 export async function register(username: string, email: string, password: string) {
@@ -57,4 +59,15 @@ export function getCurrentUser() {
     if (user) return JSON.parse(user);
 
     return null;
+};
+
+export function updateCurrentUser(access_token: string) {
+    const user = localStorage.getItem("user");
+    if (user) {
+        const userData: userAccessType = JSON.parse(user);
+        userData.access_token = access_token;
+
+        const updatedUser = JSON.stringify(userData);
+        localStorage.setItem("user", updatedUser);
+    }
 };

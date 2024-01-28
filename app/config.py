@@ -9,7 +9,8 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + path.join(BASE_DIRECTORY, 'database.db')
 
     JWT_SECRET_KEY = "jwtsecretkey"
-    JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=30)
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(seconds=10)
+    JWT_REFRESH_TOKEN_EXPIRES = timedelta(seconds=30)
 
     REDIS_HOST = "127.0.0.1"
     REDIS_PORT = 6379
